@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este README normalmente documentaría los pasos necesarios para poner en marcha la aplicación.
 
-Things you may want to cover:
+Cosas que podrías querer cubrir:
 
-* Ruby version
+* Versión de Ruby
+* Dependencias del sistema
+* Configuración
+* Creación de la base de datos
+* Inicialización de la base de datos
+* Cómo ejecutar el conjunto de pruebas
+* Servicios (colas de trabajos, servidores de caché, motores de búsqueda, etc.)
+* Instrucciones de implementación
 
-* System dependencies
+## Versiones
 
-* Configuration
+* Ruby: 3.2
+* SQLite: 7.1.3.2
 
-* Database creation
+## Iniciar el proyecto
 
-* Database initialization
+Para iniciar el proyecto, puedes usar el siguiente comando:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+sudo bin/rails server
