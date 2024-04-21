@@ -16,7 +16,8 @@ Cosas que podrías querer cubrir:
 ## Versiones
 
 * Ruby: 3.2
-* SQLite: 7.1.3.2
+* Rails: 7.1.3.2
+* SQlite
 
 ## Iniciar el proyecto
 
