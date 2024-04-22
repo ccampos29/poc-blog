@@ -1,11 +1,40 @@
-<h1>Articles</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Articles</title>
+  <!-- Incluir Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Encabezado de la página -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Article Management</h1>
+  </header>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
-</ul>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Articles</h2> <!-- Uso de <h2> para jerarquía correcta -->
+      <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+    </div>
 
-<%= link_to "New Article", new_article_path %>
+    <!-- Uso de list-group para estilo consistente -->
+    <ul class="list-group mb-4"> <!-- Añadir margen inferior para espacio después de la lista -->
+      <% @articles.each do |article| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <%= link_to article.title, article, class: "text-primary" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="bg-secondary text-white text-center py-3">
+    <p>&copy; 2024 Article Management System. All rights reserved.</p>
+  </footer>
+
+  <!-- Incluir Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,11 +1,45 @@
-<h1><%= @article.title %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @article.title %></title>
+  <!-- Incluir Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <!-- Encabezado de la página -->
+  <header class="bg-primary text-white text-center py-4">
+    <h1>Article Management</h1>
+  </header>
 
-<p><%= @article.body %></p>
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1><%= @article.title %></h1>
+      <%= link_to "Back to Articles", articles_path, class: "btn btn-secondary" %>
+    </div>
+    
+    <p class="mb-4"><%= @article.body %></p>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
+    <!-- Botones de acciones para el artículo -->
+    <div class="btn-group mb-4"> <!-- Agregar margen inferior para espacio -->
+      <%= link_to "Edit", edit_article_path(@article), class: "btn btn-warning btn-sm" %>
+      <%= link_to "Delete", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
+                  }, class: "btn btn-danger btn-sm" %>
+    </div>
+
+    <!-- Espacio adicional para crear un equilibrio visual -->
+    <div class="mt-4"></div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="bg-secondary text-white text-center py-3">
+    <p>&copy; 2024 Article Management System. All rights reserved.</p>
+  </footer>
+
+  <!-- Incluir Bootstrap JS y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
