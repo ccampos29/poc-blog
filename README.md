@@ -1,27 +1,30 @@
 # README
 
-Este README normalmente documentaría los pasos necesarios para poner en marcha la aplicación.
+Este proyecto es un crud simple sobre los elementos que se pueden administrar en un blog, a continuación se listarán los elementos necesarios para la ejecución del proyecto y los requermientos minimos.
 
-Cosas que podrías querer cubrir:
-
-* Versión de Ruby
-* Dependencias del sistema
-* Configuración
-* Creación de la base de datos
-* Inicialización de la base de datos
-* Cómo ejecutar el conjunto de pruebas
-* Servicios (colas de trabajos, servidores de caché, motores de búsqueda, etc.)
-* Instrucciones de implementación
-
-## Versiones
+## Dependencias
 
 * Ruby: 3.2
 * Rails: 7.1.3.2
 * SQlite
 
-## Iniciar el proyecto
+## Configuración del proyecto
+
+Se deben ejecutar las migraciones con el siguiente comando:
+
+```bash
+bin/rails db:migrate
+```
+
+## Entorno de ejecución
 
 Para iniciar el proyecto, puedes usar el siguiente comando:
 
 ```bash
-sudo bin/rails server
+bin/rails server
+```
+
+Para listar las rutas que se usan en el proyecto:
+```bash
+bin/rails routes
+```
