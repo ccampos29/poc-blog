@@ -9,8 +9,8 @@ phases:
       nodejs: 20
     commands:
       - echo "Installing dependencies..."
-      - rbenv install 3.2.0  # Instala ruby-3.2.0 si no está instalado
-      - rbenv local 3.2.0    # Configura la versión de Ruby para este proyecto
+      - rbenv install 3.2.2  # Instala ruby-3.2.0 si no está instalado
+      - rbenv local 3.2.2    # Configura la versión de Ruby para este proyecto
       - bundle install
 
   # Fase de compilación: Construye la aplicación Rails
