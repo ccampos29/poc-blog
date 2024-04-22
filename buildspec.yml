@@ -39,4 +39,3 @@ artifacts:
 env:
   variables:
     RAILS_ENV: production
-    SECRET_KEY_BASE: EQkU13nxzs/RRf3z2B6JUA==
