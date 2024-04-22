@@ -31,8 +31,6 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: 'public'
-  discard-paths: yes
 
 # Variables de entorno (opcional)
 env:
