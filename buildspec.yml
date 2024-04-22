@@ -34,8 +34,3 @@ artifacts:
   files:
     - '**/*'
   name: poc-bloc-$(date +%Y-%m-%d)
-
-# Variables de entorno (opcional)
-env:
-  variables:
-    RAILS_ENV: production
