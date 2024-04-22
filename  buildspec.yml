@@ -1,0 +1,41 @@
+version: 0.2
+
+# La sección "phases" define los pasos de compilación
+phases:
+  # Fase de instalación: Instala las dependencias y configura el entorno
+  install:
+    runtime-versions:
+      ruby: 2.7
+      nodejs: 20
+    commands:
+      - bundle install
+      - npm install
+
+  # Fase pre-build: Ejecuta tareas previas a la compilación
+  pre_build:
+    commands:
+      - bundle exec rake db:create db:migrate
+
+  # Fase de compilación: Construye la aplicación Rails
+  build:
+    commands:
+      - bundle exec rake assets:precompile
+
+  # Fase post-build: Ejecuta tareas posteriores a la compilación
+  post_build:
+    commands:
+      - bundle exec rake test
+      - echo "¡Compilación completada con éxito!"
+
+# La sección "artifacts" define los artefactos de salida
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'public'
+  discard-paths: yes
+
+# Variables de entorno (opcional)
+env:
+  variables:
+    RAILS_ENV: production
+    SECRET_KEY_BASE: EQkU13nxzs/RRf3z2B6JUA==
