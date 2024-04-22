@@ -8,26 +8,24 @@ phases:
       ruby: 3.2
       nodejs: 20
     commands:
+      - echo "Installing dependencies..."
       - rbenv install 3.2.0  # Instala ruby-3.2.0 si no está instalado
       - rbenv local 3.2.0    # Configura la versión de Ruby para este proyecto
       - bundle install
-      - npm install
-
-  # Fase pre-build: Ejecuta tareas previas a la compilación
-  pre_build:
-    commands:
-      - bundle exec rake db:create db:migrate
 
   # Fase de compilación: Construye la aplicación Rails
   build:
     commands:
+      - echo "Building application...""
       - bundle exec rake assets:precompile
+      - bundle exec rake db:create db:migrate
 
   # Fase post-build: Ejecuta tareas posteriores a la compilación
   post_build:
     commands:
+      - echo "Executing integration tests..."
       - bundle exec rake test
-      - echo "¡Compilación completada con éxito!"
+      - echo "Success compilation..."
 
 # La sección "artifacts" define los artefactos de salida
 artifacts:
