@@ -11,22 +11,18 @@ phases:
       - echo "Installing dependencies..."
       - gem install bundler
       - bundle install --jobs $(nproc) --retry 3
-      #- rbenv install 3.2.0  # Instala ruby-3.2.0 si no está instalado
-      #- rbenv local 3.2.0    # Configura la versión de Ruby para este proyecto
-      #- bundle install
 
   # Fase de compilación: Construye la aplicación Rails
   build:
     commands:
       - echo "Building application..."
-      - bundle exec rake assets:precompile
       - bundle exec rake db:create db:migrate
 
   # Fase post-build: Ejecuta tareas posteriores a la compilación
   post_build:
     commands:
       - echo "Executing integration tests..."
-      - bundle exec rake test
+      - rails test
       - echo "Success compilation..."
 
 # La sección "artifacts" define los artefactos de salida
