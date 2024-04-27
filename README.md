@@ -2,7 +2,6 @@
 
 Este proyecto es un crud simple sobre los elementos que se pueden administrar en un blog, a continuación se listarán los elementos necesarios para la ejecución del proyecto y los requermientos minimos.
 
-
 ## Dependencias
 
 * Ruby: 3.2
@@ -29,4 +28,3 @@ Para listar las rutas que se usan en el proyecto:
 ```bash
 bin/rails routes
 ```
-
