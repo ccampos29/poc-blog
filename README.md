@@ -17,6 +17,7 @@ Se deben ejecutar las migraciones con el siguiente comando:
 bin/rails db:migrate
 ```
 
+
 ## Entorno de ejecución
 
 Para iniciar el proyecto, puedes usar el siguiente comando:
