@@ -28,3 +28,4 @@ Para listar las rutas que se usan en el proyecto:
 ```bash
 bin/rails routes
 ```
+
